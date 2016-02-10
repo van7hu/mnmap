@@ -5,22 +5,23 @@ import scan
 from datetime import datetime
 import copy
 
-def check_for_save(threads, ips, running_ips, next_ips):
+def check_for_save(threads, ips, running_ips, next_ips, init_file):
     if os.path.exists('save'):
-        save_state_exit(threads, ips, running_ips, next_ips)
+        save_state_exit(threads, ips, running_ips, next_ips, init_file)
 
 class state:
-    def __init__(self, ips, running_ips, next_ips):
+    def __init__(self, ips, running_ips, next_ips, init_file):
         self.ips = ips # list of ip(s) to scan.
         self.running_ips = running_ips # list of ip(s), which is being scanned.
         self.next_ips = next_ips # next index in list of ip(s), which is going to be scanned.
+	self.init_file = init_file
     
-def save_state_exit(threads, ips, running_ips, next_ips):
-    save_state(threads, ips, running_ips, next_ips)
+def save_state_exit(threads, ips, running_ips, next_ips, init_file):
+    save_state(threads, ips, running_ips, next_ips, init_fukw)
     print 'At ['+ str(datetime.now()) + '] script, self-killing for exit. Good bye!'
     os.system('kill $PPID')
 
-def save_state(threads, ips, running_ips, next_ips):
+def save_state(threads, ips, running_ips, next_ips, init_file):
 
     # dont allow start new thread of scan
 
@@ -34,7 +35,7 @@ def save_state(threads, ips, running_ips, next_ips):
         except:
             'At ['+ str(datetime.now()) + '] script, do not even try to kill a ZOMBIES'
 
-    sstate = state(ips, running_ips, next_ips)
+    sstate = state(ips, running_ips, next_ips, init_file)
 
     with open('state.pickle', 'wb') as f:
         pickle.dump(sstate, f)
@@ -58,6 +59,8 @@ def load_state(threads, ips, running_ips):
     for i in threads:
         threads.remove(i)
 
+    dir = sstate.init_file + '.init'
+
     for v in tmp_running_ips.values():
         # check the number of line of output file, if it's less than, equal 1, treat as new scan
         vout = v.replace('/', '..') + '.out'
@@ -65,11 +68,11 @@ def load_state(threads, ips, running_ips):
             vlines = f.readlines()
            
         if len(vlines) <=1:
-            t = Process(target = nmap_start_runner, args = (v,))
+            t = Process(target = nmap_start_runner, args = (v, dir))
             t.daemon = True           
             t.start()
         else:
-            t = Process(target = nmap_resume_runner, args = (v,)) 
+            t = Process(target = nmap_resume_runner, args = (v, dir)) 
             t.daemon = True       
             t.start()
         threads.append(t) 
@@ -77,4 +80,4 @@ def load_state(threads, ips, running_ips):
         running_ips[t.name] = v
 
     print 'At ['+ str(datetime.now()) + '] script, threads after resumed: ' + str(threads)
-    return sstate.next_ips
+    return sstate.next_ips, sstate.init_file

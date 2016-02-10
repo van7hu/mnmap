@@ -4,12 +4,37 @@ import multiprocessing, sys, os, time, pickle
 from time import sleep
 from libs import aux, scan, state
 
+import argparse
 
-MAX_THREADS = 8
+BLACK_LIST = ['libs', 'mnmap', 'install.sh']
 
-aux.test_network.counter = 0
-scan.scan.start_flag = True
-aux.print_status.output_counter = 0
 
-scan.scan(MAX_THREADS)
+# MAX_THREADS = 8
+
+#aux.test_network.counter = 0
+#scan.scan.start_flag = True
+#aux.print_status.output_counter = 0
+
+#scan.scan(MAX_THREADS)
+
+def main():
+    parser = argparse.ArgumentParser(description="Nmap's wrapper for multiple networks scanning.")
+    aux.init_argparser(parser)
+    args = parser.parse_args()
+
+    if args.action == 'start' and (args.input is None or args.threads is None):
+        parser.error('to start new scan, input file and number of threads are required.')
+
+    if args.input in BLACK_LIST:
+        parser.error("'" + args.input + "' used as named of input file is not permitted.")
+
+    aux.test_network.counter = 0
+    scan.scan.start_flag = True
+    aux.print_status.output_counter = 0
+
+    scan.scan(args.threads, args.action, args.input)    
+
+if __name__ == '__main__':
+    main()
+
 
