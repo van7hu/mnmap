@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+import multiprocessing, sys, os, time, pickle
+from time import sleep
+from libs import aux, scan, state
+
+
+MAX_THREADS = 8
+
+aux.test_network.counter = 0
+scan.scan.start_flag = True
+aux.print_status.output_counter = 0
+
+scan.scan(MAX_THREADS)
+
