@@ -7,34 +7,38 @@ import argparse
 # this should not be too big, if not, nmap will GIVE UP, I haven't had code to handle this case
 MAX_NET_ERROR = 10
 
+def mnmap_msg(msg):
+    base = 'At ['+ str(datetime.now()) + '] script, '
+    print base + str(msg)
+
 def test_network(threads, ips, running_ips, next_ips, init_file):
     if (test_network_aux()==False):
         scan.scan.start_flag = False
 
         if test_network.counter == 0:
-            print 'At ['+ str(datetime.now()) + '] script, you may have Internet problem!'
+            mnmap_msg('you may have Internet problem!')
             test_network.counter = test_network.counter + 1
         elif test_network.counter < MAX_NET_ERROR:
-            print 'At ['+ str(datetime.now()) + '] script, '+ str(test_network.counter) + '. Internet problem still persisted!'
+            mnmap_msg(str(test_network.counter) + '. Internet problem still persisted.')
             sleep(5)
             test_network.counter = test_network.counter + 1
         elif test_network.counter == MAX_NET_ERROR:
-            print 'At ['+ str(datetime.now()) + '] script, '+ str(test_network.counter) + '. too much network errors, will save the state'
+            mnmap_msg(str(test_network.counter) + '. too much network errors, will save the state')
             state.save_state(threads, ips, running_ips, next_ips, init_file)
             test_network.counter = test_network.counter + 1
         else:
-            print 'At ['+ str(datetime.now()) + '] script, '+ str(test_network.counter) + '. Internet problem still persisted, state has been saved!'
-            sleep(0.25)
+            mnmap_msg(str(test_network.counter) + '. Internet problem still persisted, state has been saved.')
+            sleep(1)
             test_network.counter = test_network.counter + 1
     
     else:
         if(test_network.counter >= MAX_NET_ERROR):
-            print 'At ['+ str(datetime.now()) + '] script, Internet problem has been solved'
-            next_ips, init_file = state.load_state(threads, ips, running_ips) # here should contain problems X must be solved by Y
+            mnmap_msg('Internet problem has been solved')
+            next_ips = state.load_state(threads, ips, running_ips, init_file)
             test_network.counter = 0
-            return next_ips # will be greater than 0, Y
+            # return next_ips # This line will not needed, when checking with network, we have done nothing with next_ips
         elif test_network.counter > 0:
-            print 'At ['+ str(datetime.now()) + '] script, ' + str(test_network.counter) + ' .Internet problem has been solved'
+            mnmap_msg(str(test_network.counter) + ' .Internet problem has been solved')
             test_network.counter = 0
 
         scan.scan.start_flag = True
@@ -58,12 +62,39 @@ def read_init_file(init_file):
     except:
         pass
     
-    return lines
+    out = processing_init_ips(lines)
+    processed_file = init_file + '.processed'
+    with open(processed_file, 'w') as f:
+        for line in out:
+            f.write(line+'\n')
+
+    mnmap_msg("'" + processed_file + "' was written for reference")
+    return out
+
+def processing_init_ips(ips):
+    r = []
+    for i in ips:
+        r.append(i.split('/'))
+
+    for k in reversed(r):
+        for i in reversed(r):
+            if ((len(k) == 2 and len(i) == 2)) and k[0] == i[0]:
+                if int(k[1]) < int(i[1]):
+                    r.remove(i)
+    out = []
+    for i in r:
+        if len(i) == 1:
+            out.append(i[0])
+        if len(i) == 2:
+            out.append(i[0] + '/' + i[1])
+
+    return out
+
 
 def print_status(next_ips, ips):
     sleep(1)
     if print_status.output_counter % 600 == 0:
-        print 'At ['+ str(datetime.now()) + '] script, STATUS: we up to ' + str(next_ips) + ' of ' + str(len(ips))
+        mnmap_msg('STATUS: up to ' + str(next_ips) + ' of ' + str(len(ips)))
 
     print_status.output_counter = print_status.output_counter + 1
 
@@ -74,4 +105,12 @@ def init_argparser(parser):
 
     parser.add_argument('-i, --input', required=False, help='input file for scanning, line seperated ip, ip range or hostname', dest='input', type=str)
 
-    
+def remove_thread(threads, running_ips):
+    for k in list(threads):
+        if k.is_alive()==False:
+            # remove the thread from running_ips dict
+            del running_ips[k.name]
+
+            mnmap_msg('remove the thread "' + str(k) + '"')
+            threads.remove(k)
+            mnmap_msg('running threads after removed: ' + str(threads))

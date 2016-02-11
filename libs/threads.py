@@ -1,4 +1,5 @@
 import os, sys
+import aux
 
 pro = 'nmap'
 STDIN_FILENO = 0
@@ -6,30 +7,31 @@ STDOUT_FILENO = 1
 STDERR_FILENO = 2
 from datetime import datetime
 
-def redirect_output():
+def redirect_output(dir):
     # redirect stdout            
-    new_stdout = os.open('nmap.out', os.O_WRONLY|os.O_CREAT|os.O_TRUNC)
+    new_stdout = os.open(os.path.join(dir, 'nmap.out'), os.O_WRONLY|os.O_CREAT|os.O_TRUNC)
     os.dup2(new_stdout, STDOUT_FILENO)
 
     # redirect stderr
-    new_stderr = os.open('nmap.err', os.O_WRONLY|os.O_CREAT|os.O_TRUNC)
+    new_stderr = os.open(os.path.join(dir, 'nmap.err'), os.O_WRONLY|os.O_CREAT|os.O_TRUNC)
     os.dup2(new_stderr, STDERR_FILENO)
 
 def nmap_start_runner(ip, dir):
     outfile = ip.replace('/', '..')
     outfile = os.path.join(dir, outfile)
-    args = ['-sV', '-O', '-Pn', '-o',outfile + '.out', ip]
-    print 'At ['+ str(datetime.now()) + '] script, starting: '+ pro + ' ' + str(args)
+    args = ['-sV', '-O', '-Pn', '-oX',outfile + '.xml', '-o', outfile + '.out', ip]
+    aux.mnmap_msg('starting: '+ pro + ' ' + str(args))
 
-    redirect_output()
+    redirect_output(dir)
     os.execvp(pro, args)
 
+# this function is obsolete for xml output
 def nmap_resume_runner(ip, dir):  
     outfile = ip.replace('/', '..')
     outfile = os.path.join(dir, outfile)
     args = ['nmap --resume ', outfile + '.out']
-    print 'At ['+ str(datetime.now()) + '] script, starting: ' + pro + str(args)
+    aux.mnmap_msg('starting: ' + pro + str(args))
 
-    redirect_output()
+    redirect_output(dir)
     os.execvp(pro, args)
 

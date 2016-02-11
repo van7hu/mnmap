@@ -3,10 +3,11 @@ from multiprocessing import Process
 from threads import nmap_start_runner, nmap_resume_runner
 import scan
 from datetime import datetime
-import copy
+import aux
 
 def check_for_save(threads, ips, running_ips, next_ips, init_file):
-    if os.path.exists('save'):
+    save_file = os.path.join(init_file + '.dir', 'save')
+    if os.path.exists(save_file):
         save_state_exit(threads, ips, running_ips, next_ips, init_file)
 
 class state:
@@ -17,18 +18,20 @@ class state:
 	self.init_file = init_file
     
 def save_state_exit(threads, ips, running_ips, next_ips, init_file):
-    save_state(threads, ips, running_ips, next_ips, init_fukw)
-    print 'At ['+ str(datetime.now()) + '] script, self-killing for exit. Good bye!'
+    save_state(threads, ips, running_ips, next_ips, init_file)
+    aux.mnmap_msg('self-killing for exit. Good bye!')
     os.system('kill $PPID')
 
 def save_state(threads, ips, running_ips, next_ips, init_file):
 
-    # dont allow start new thread of scan
+    dir = init_file + '.dir'
+    state_file = os.path.join(dir, init_file + '.pickle')
 
-    print 'At ['+ str(datetime.now()) + '] script, saving state'
-    print 'At ['+ str(datetime.now()) + '] script, killing all child-processes'
 
-    print 'At ['+ str(datetime.now()) + '] script, threads before mass-kill: ' + str(threads)
+    aux.mnmap_msg('saving state')
+    aux.mnmap_msg('killing all child-processes')
+
+    aux.mnmap_msg('threads before mass-kill: ' + str(threads))
     for t in threads:
         try:
             t.terminate()
@@ -37,12 +40,15 @@ def save_state(threads, ips, running_ips, next_ips, init_file):
 
     sstate = state(ips, running_ips, next_ips, init_file)
 
-    with open('state.pickle', 'wb') as f:
+    with open(state_file, 'wb') as f:
         pickle.dump(sstate, f)
 
-def load_state(threads, ips, running_ips):
-    print 'At ['+ str(datetime.now()) + '] script, load the saved state'
-    with open('state.pickle', 'rb') as f:
+def load_state(threads, ips, running_ips, init_file):
+    aux.mnmap_msg('load the saved state')
+    dir = init_file + '.dir'
+    state_file = os.path.join(dir, init_file + '.pickle')
+
+    with open(state_file, 'rb') as f:
         sstate = pickle.load(f) 
    
     for i in reversed(ips):
@@ -59,11 +65,13 @@ def load_state(threads, ips, running_ips):
     for i in threads:
         threads.remove(i)
 
-    dir = sstate.init_file + '.init'
+
 
     for v in tmp_running_ips.values():
         # check the number of line of output file, if it's less than, equal 1, treat as new scan
         vout = v.replace('/', '..') + '.out'
+        vout = os.path.join(dir, vout)
+
         with open(vout, 'r') as f:
             vlines = f.readlines()
            
@@ -79,5 +87,6 @@ def load_state(threads, ips, running_ips):
 
         running_ips[t.name] = v
 
-    print 'At ['+ str(datetime.now()) + '] script, threads after resumed: ' + str(threads)
-    return sstate.next_ips, sstate.init_file
+    aux.mnmap_msg('threads after resumed: ' + str(threads))
+
+    return sstate.next_ips

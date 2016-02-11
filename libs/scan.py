@@ -14,14 +14,15 @@ def scan(max_thread, action, init_file):
     running_ips = {}
     next_ips = 0
 
+    dir = init_file + '.dir'
+
     if action == 'start':
+        aux.mnmap_msg("reading init file '" + init_file + "'")
         ips = aux.read_init_file(init_file)
-        dir = init_file + '.dir'
         shutil.rmtree(dir, True)
         os.mkdir(dir)
-        k = os.path.join(dir, 'a.txt')
 
-        print 'At ['+ str(datetime.now()) + '] script, you have chosen to start new scanning'
+        aux.mnmap_msg('you have chosen to start new scanning')
         for i in range(max_thread):
             t = Process(target = nmap_start_runner, args = (ips[i], dir))
             t.daemon = True
@@ -30,57 +31,53 @@ def scan(max_thread, action, init_file):
 
             running_ips[t.name] = ips[i]
 
-        print 'At ['+ str(datetime.now()) + '] script, initial threads: ' + str(threads)
+        aux.mnmap_msg('initial threads: ' + str(threads))
         next_ips = max_thread
     
     elif action == 'resume':
-        print 'At ['+ str(datetime.now()) + '] script, you have chosen to resume an old scanning'
-        next_ips, init_file = state.load_state(threads, ips, running_ips)
+        aux.mnmap_msg('you have chosen to resume an old scanning')
+        next_ips = state.load_state(threads, ips, running_ips, init_file)
 
     else:
-        print 'At ['+ str(datetime.now()) + '] script, please use start/resume for your action'
+        aux.mnmap_msg('please use start/resume for your action')
         exit(1)
 
     while True:
         state.check_for_save(threads, ips, running_ips, next_ips, init_file)
         aux.test_network(threads, ips, running_ips, next_ips, init_file)
         aux.print_status(next_ips, ips)
-        for k in list(threads):
-            if k.is_alive()==False:
-                print 'At ['+ str(datetime.now()) + '] script, remove the thread "' + str(k) + '"'
-                threads.remove(k)
-                print 'At ['+ str(datetime.now()) + '] script, list of currently running threads after killed: ' + str(threads)
+
+        aux.remove_thread(threads, running_ips)
 
         if len(threads) < max_thread:
             
             if scan.start_flag == True:
                 if next_ips < len(ips):
-                    print 'At ['+ str(datetime.now()) + '] script, a thread of scan has finished, starting a new one'
+                    aux.mnmap_msg('a thread of scan has finished, starting a new one')
                     t = Process(target = nmap_start_runner, args = (ips[next_ips], dir))
                     t.daemon = True
                     t.start()
-                    next_ips = next_ips + 1
+
                     threads.append(t)
-                    print 'At ['+ str(datetime.now()) + '] script, threads after added new one: ' + str(threads)
+                    running_ips[t.name] = ips[next_ips]
+                    next_ips = next_ips + 1
+
+                    aux.mnmap_msg('threads after added new one: ' + str(threads))
                 else:
-                    print 'At ['+ str(datetime.now()) + '] script, we have iterate over all the init lines'
+                    aux.mnmap_msg('we have iterate over all the init lines')
                     break
             else:
                 # do nothing
                 pass
 
     while True:
-        state.check_for_save(threads, ips, running_ips, next_ips)
-        aux.test_network(threads, ips, running_ips)
+        state.check_for_save(threads, ips, running_ips, next_ips, init_file)
+        aux.test_network(threads, ips, running_ips, next_ips, init_file)
         aux.print_status(next_ips, ips)
 
-        for k in list(threads):
-            if k.is_alive()==False:
-                print 'At ['+ str(datetime.now()) + '] script, remove the thread "' + str(k) + '"'
-                threads.remove(k)
-                print 'At ['+ str(datetime.now()) + '] script, list of currently running threads after killed: ' + str(threads)
+        aux.remove_thread(threads, running_ips)
 
         if(len(threads)==0):
-            print 'At ['+ str(datetime.now()) + '] script, we have finished, get out!'
+            aux.mnmap_msg('we have finished, get out!')
             exit(0)    
 

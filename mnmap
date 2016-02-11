@@ -25,6 +25,11 @@ def main():
     if args.action == 'start' and (args.input is None or args.threads is None):
         parser.error('to start new scan, input file and number of threads are required.')
 
+    if args.action == 'resume' and args.input is None:
+        parser.error('to resume old scan, input file must be provided.')
+
+    if args.threads is None or args.threads <= 0:
+        parser.error('you do not provide a valid value for threads')
     if args.input in BLACK_LIST:
         parser.error("'" + args.input + "' used as named of input file is not permitted.")
 
