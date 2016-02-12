@@ -19,18 +19,17 @@ def redirect_output(dir):
 def nmap_start_runner(ip, dir):
     outfile = ip.replace('/', '..')
     outfile = os.path.join(dir, outfile)
-    args = ['-sV', '-O', '-Pn', '-oX',outfile + '.xml', '-o', outfile + '.out', ip]
+    args = ['nmap', '-sV', '-O', '-Pn', '-oX',outfile + '.xml', '-o', outfile + '.out', ip]
     aux.mnmap_msg('starting: '+ pro + ' ' + str(args))
 
     redirect_output(dir)
     os.execvp(pro, args)
 
-# this function is obsolete for xml output
 def nmap_resume_runner(ip, dir):  
     outfile = ip.replace('/', '..')
     outfile = os.path.join(dir, outfile)
-    args = ['nmap --resume ', outfile + '.out']
-    aux.mnmap_msg('starting: ' + pro + str(args))
+    args = ['nmap', '--resume', outfile + '.out']
+    aux.mnmap_msg('starting: ' + pro + ' ' + str(args))
 
     redirect_output(dir)
     os.execvp(pro, args)

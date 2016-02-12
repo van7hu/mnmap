@@ -1,0 +1,654 @@
+# Nmap 7.01 scan initiated Fri Feb 12 08:20:39 2016 as: nmap -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+Nmap scan report for 8.8.8.0
+Host is up.
+All 1000 scanned ports on 8.8.8.0 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.1
+Host is up.
+All 1000 scanned ports on 8.8.8.1 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.2
+Host is up.
+All 1000 scanned ports on 8.8.8.2 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.3
+Host is up.
+All 1000 scanned ports on 8.8.8.3 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.4
+Host is up.
+All 1000 scanned ports on 8.8.8.4 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.5
+Host is up.
+All 1000 scanned ports on 8.8.8.5 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.6
+Host is up.
+All 1000 scanned ports on 8.8.8.6 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.7
+Host is up.
+All 1000 scanned ports on 8.8.8.7 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for google-public-dns-a.google.com (8.8.8.8)
+Host is up.
+All 1000 scanned ports on google-public-dns-a.google.com (8.8.8.8) are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.9
+Host is up.
+All 1000 scanned ports on 8.8.8.9 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.10
+Host is up.
+All 1000 scanned ports on 8.8.8.10 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.11
+Host is up.
+All 1000 scanned ports on 8.8.8.11 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.12
+Host is up.
+All 1000 scanned ports on 8.8.8.12 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.13
+Host is up.
+All 1000 scanned ports on 8.8.8.13 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.14
+Host is up.
+All 1000 scanned ports on 8.8.8.14 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.15
+Host is up.
+All 1000 scanned ports on 8.8.8.15 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.16
+Host is up.
+All 1000 scanned ports on 8.8.8.16 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.17
+Host is up.
+All 1000 scanned ports on 8.8.8.17 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.18
+Host is up.
+All 1000 scanned ports on 8.8.8.18 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.19
+Host is up.
+All 1000 scanned ports on 8.8.8.19 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.20
+Host is up.
+All 1000 scanned ports on 8.8.8.20 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.21
+Host is up.
+All 1000 scanned ports on 8.8.8.21 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.22
+Host is up.
+All 1000 scanned ports on 8.8.8.22 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.23
+Host is up.
+All 1000 scanned ports on 8.8.8.23 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.24
+Host is up.
+All 1000 scanned ports on 8.8.8.24 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.25
+Host is up.
+All 1000 scanned ports on 8.8.8.25 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.26
+Host is up.
+All 1000 scanned ports on 8.8.8.26 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.27
+Host is up.
+All 1000 scanned ports on 8.8.8.27 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.28
+Host is up.
+All 1000 scanned ports on 8.8.8.28 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.29
+Host is up.
+All 1000 scanned ports on 8.8.8.29 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.30
+Host is up.
+All 1000 scanned ports on 8.8.8.30 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.31
+Host is up.
+All 1000 scanned ports on 8.8.8.31 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.32
+Host is up.
+All 1000 scanned ports on 8.8.8.32 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.33
+Host is up.
+All 1000 scanned ports on 8.8.8.33 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.34
+Host is up.
+All 1000 scanned ports on 8.8.8.34 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.35
+Host is up.
+All 1000 scanned ports on 8.8.8.35 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.36
+Host is up.
+All 1000 scanned ports on 8.8.8.36 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.37
+Host is up.
+All 1000 scanned ports on 8.8.8.37 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.38
+Host is up.
+All 1000 scanned ports on 8.8.8.38 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.39
+Host is up.
+All 1000 scanned ports on 8.8.8.39 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.40
+Host is up.
+All 1000 scanned ports on 8.8.8.40 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.41
+Host is up.
+All 1000 scanned ports on 8.8.8.41 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.42
+Host is up.
+All 1000 scanned ports on 8.8.8.42 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.43
+Host is up.
+All 1000 scanned ports on 8.8.8.43 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.44
+Host is up.
+All 1000 scanned ports on 8.8.8.44 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.45
+Host is up.
+All 1000 scanned ports on 8.8.8.45 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.46
+Host is up.
+All 1000 scanned ports on 8.8.8.46 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.47
+Host is up.
+All 1000 scanned ports on 8.8.8.47 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.48
+Host is up.
+All 1000 scanned ports on 8.8.8.48 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.49
+Host is up.
+All 1000 scanned ports on 8.8.8.49 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.50
+Host is up.
+All 1000 scanned ports on 8.8.8.50 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.51
+Host is up.
+All 1000 scanned ports on 8.8.8.51 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.52
+Host is up.
+All 1000 scanned ports on 8.8.8.52 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.53
+Host is up.
+All 1000 scanned ports on 8.8.8.53 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.54
+Host is up.
+All 1000 scanned ports on 8.8.8.54 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.55
+Host is up.
+All 1000 scanned ports on 8.8.8.55 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.56
+Host is up.
+All 1000 scanned ports on 8.8.8.56 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.57
+Host is up.
+All 1000 scanned ports on 8.8.8.57 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.58
+Host is up.
+All 1000 scanned ports on 8.8.8.58 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.59
+Host is up.
+All 1000 scanned ports on 8.8.8.59 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.60
+Host is up.
+All 1000 scanned ports on 8.8.8.60 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.61
+Host is up.
+All 1000 scanned ports on 8.8.8.61 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.62
+Host is up.
+All 1000 scanned ports on 8.8.8.62 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.63
+Host is up.
+All 1000 scanned ports on 8.8.8.63 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.64
+Host is up.
+All 1000 scanned ports on 8.8.8.64 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.65
+Host is up.
+All 1000 scanned ports on 8.8.8.65 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.66
+Host is up.
+All 1000 scanned ports on 8.8.8.66 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.67
+Host is up.
+All 1000 scanned ports on 8.8.8.67 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.68
+Host is up.
+All 1000 scanned ports on 8.8.8.68 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.69
+Host is up.
+All 1000 scanned ports on 8.8.8.69 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.70
+Host is up.
+All 1000 scanned ports on 8.8.8.70 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.71
+Host is up.
+All 1000 scanned ports on 8.8.8.71 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.72
+Host is up.
+All 1000 scanned ports on 8.8.8.72 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.73
+Host is up.
+All 1000 scanned ports on 8.8.8.73 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.74
+Host is up.
+All 1000 scanned ports on 8.8.8.74 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.75
+Host is up.
+All 1000 scanned ports on 8.8.8.75 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.76
+Host is up.
+All 1000 scanned ports on 8.8.8.76 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.77
+Host is up.
+All 1000 scanned ports on 8.8.8.77 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.78
+Host is up.
+All 1000 scanned ports on 8.8.8.78 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.79
+Host is up.
+All 1000 scanned ports on 8.8.8.79 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.80
+Host is up.
+All 1000 scanned ports on 8.8.8.80 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.81
+Host is up.
+All 1000 scanned ports on 8.8.8.81 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.82
+Host is up.
+All 1000 scanned ports on 8.8.8.82 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.83
+Host is up.
+All 1000 scanned ports on 8.8.8.83 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.84
+Host is up.
+All 1000 scanned ports on 8.8.8.84 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.85
+Host is up.
+All 1000 scanned ports on 8.8.8.85 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.86
+Host is up.
+All 1000 scanned ports on 8.8.8.86 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.87
+Host is up.
+All 1000 scanned ports on 8.8.8.87 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.88
+Host is up.
+All 1000 scanned ports on 8.8.8.88 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.89
+Host is up.
+All 1000 scanned ports on 8.8.8.89 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.90
+Host is up.
+All 1000 scanned ports on 8.8.8.90 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.91
+Host is up.
+All 1000 scanned ports on 8.8.8.91 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.92
+Host is up.
+All 1000 scanned ports on 8.8.8.92 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.93
+Host is up.
+All 1000 scanned ports on 8.8.8.93 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.94
+Host is up.
+All 1000 scanned ports on 8.8.8.94 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.95
+Host is up.
+All 1000 scanned ports on 8.8.8.95 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.96
+Host is up.
+All 1000 scanned ports on 8.8.8.96 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.97
+Host is up.
+All 1000 scanned ports on 8.8.8.97 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.98
+Host is up.
+All 1000 scanned ports on 8.8.8.98 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.99
+Host is up.
+All 1000 scanned ports on 8.8.8.99 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.100
+Host is up.
+All 1000 scanned ports on 8.8.8.100 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.101
+Host is up.
+All 1000 scanned ports on 8.8.8.101 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.102
+Host is up.
+All 1000 scanned ports on 8.8.8.102 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.103
+Host is up.
+All 1000 scanned ports on 8.8.8.103 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.104
+Host is up.
+All 1000 scanned ports on 8.8.8.104 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.105
+Host is up.
+All 1000 scanned ports on 8.8.8.105 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.106
+Host is up.
+All 1000 scanned ports on 8.8.8.106 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.107
+Host is up.
+All 1000 scanned ports on 8.8.8.107 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.108
+Host is up.
+All 1000 scanned ports on 8.8.8.108 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.109
+Host is up.
+All 1000 scanned ports on 8.8.8.109 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.110
+Host is up.
+All 1000 scanned ports on 8.8.8.110 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.111
+Host is up.
+All 1000 scanned ports on 8.8.8.111 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.112
+Host is up.
+All 1000 scanned ports on 8.8.8.112 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.113
+Host is up.
+All 1000 scanned ports on 8.8.8.113 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.114
+Host is up.
+All 1000 scanned ports on 8.8.8.114 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.115
+Host is up.
+All 1000 scanned ports on 8.8.8.115 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.116
+Host is up.
+All 1000 scanned ports on 8.8.8.116 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.117
+Host is up.
+All 1000 scanned ports on 8.8.8.117 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.118
+Host is up.
+All 1000 scanned ports on 8.8.8.118 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.119
+Host is up.
+All 1000 scanned ports on 8.8.8.119 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.120
+Host is up.
+All 1000 scanned ports on 8.8.8.120 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.121
+Host is up.
+All 1000 scanned ports on 8.8.8.121 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.122
+Host is up.
+All 1000 scanned ports on 8.8.8.122 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.123
+Host is up.
+All 1000 scanned ports on 8.8.8.123 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.124
+Host is up.
+All 1000 scanned ports on 8.8.8.124 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.125
+Host is up.
+All 1000 scanned ports on 8.8.8.125 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.126
+Host is up.
+All 1000 scanned ports on 8.8.8.126 are filtered
+Too many fingerprints match this host to give specific OS details
+
+Nmap scan report for 8.8.8.127
+Host is up.
+All 1000 scanned ports on 8.8.8.127 are filtered
+Too many fingerprints match this host to give specific OS details
+
+# Nmap 7.01 scan initiated Fri Feb 12 15:53:00 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+# Nmap 7.01 scan initiated Fri Feb 12 15:54:34 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+# Nmap 7.01 scan initiated Fri Feb 12 15:57:49 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+# Nmap 7.01 scan initiated Fri Feb 12 15:59:57 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+# Nmap 7.01 scan initiated Fri Feb 12 16:02:25 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+# Nmap 7.01 scan initiated Fri Feb 12 16:03:08 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+# Nmap 7.01 scan initiated Fri Feb 12 16:03:37 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+# Nmap 7.01 scan initiated Fri Feb 12 16:04:46 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+# Nmap 7.01 scan initiated Fri Feb 12 16:05:23 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+# Nmap 7.01 scan initiated Fri Feb 12 16:05:54 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+# Nmap 7.01 scan initiated Fri Feb 12 16:07:04 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+# Nmap 7.01 scan initiated Fri Feb 12 16:13:48 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24
+# Nmap 7.01 scan initiated Fri Feb 12 16:19:01 2016 as: nmap --append-output -sV -O -Pn -oX init.ip.dir/8.8.8.0..24.xml -o init.ip.dir/8.8.8.0..24.out 8.8.8.0/24

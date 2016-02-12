@@ -33,12 +33,12 @@ def test_network(threads, ips, running_ips, next_ips, init_file):
     
     else:
         if(test_network.counter >= MAX_NET_ERROR):
-            mnmap_msg('Internet problem has been solved')
+            mnmap_msg(str(test_network.counter) + '. Internet problem has been solved')
             next_ips = state.load_state(threads, ips, running_ips, init_file)
             test_network.counter = 0
             # return next_ips # This line will not needed, when checking with network, we have done nothing with next_ips
         elif test_network.counter > 0:
-            mnmap_msg(str(test_network.counter) + ' .Internet problem has been solved')
+            mnmap_msg(str(test_network.counter) + '. Internet problem has been solved')
             test_network.counter = 0
 
         scan.scan.start_flag = True
@@ -114,3 +114,4 @@ def remove_thread(threads, running_ips):
             mnmap_msg('remove the thread "' + str(k) + '"')
             threads.remove(k)
             mnmap_msg('running threads after removed: ' + str(threads))
+            mnmap_msg('running_ips after removed: ' + str(running_ips))
