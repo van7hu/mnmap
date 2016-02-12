@@ -4,7 +4,7 @@ def generate_html(ips, init_file, running_ips, next_ips):
     dir = init_file + '.dir'
     out_dir = 'html'
 
-    fin = aux.read_init_file(init_file)
+    fin = aux.read_init_file(init_file, False)
 
     counter = 0
     for i in range(len(ips)-1, next_ips, -1):
@@ -21,4 +21,4 @@ def generate_html(ips, init_file, running_ips, next_ips):
         out.append(tmp)
     
     for k in out:
-        os.system('xsltproc ' + os.path.join(dir, k + '.xml') + ' -o ' + os.path.join(out_dir, k + '.html'))
+        os.system('xsltproc ' + os.path.join(dir, k + '.xml') + ' -o ' + os.path.join(out_dir, k + '.html >/dev/null 2>/dev/null'))

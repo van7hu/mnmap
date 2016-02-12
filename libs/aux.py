@@ -3,6 +3,8 @@ from time import sleep
 import state, scan
 from datetime import datetime
 import argparse
+import subprocess
+import re
 
 # this should not be too big, if not, nmap will GIVE UP, I haven't had code to handle this case
 MAX_NET_ERROR = 10
@@ -53,7 +55,7 @@ def test_network_aux():
     else:
         return False
 
-def read_init_file(init_file):
+def read_init_file(init_file, write_processed):
     lines = open(init_file, 'r').readlines()
     for i in range(len(lines)):
         lines[i] = lines[i].strip()
@@ -63,12 +65,14 @@ def read_init_file(init_file):
         pass
     
     out = processing_init_ips(lines)
-    processed_file = init_file + '.processed'
-    with open(processed_file, 'w') as f:
-        for line in out:
-            f.write(line+'\n')
+    if write_processed == True:
+        processed_file = init_file + '.processed'
+        with open(processed_file, 'w') as f:
+            for line in out:
+                f.write(line+'\n')
 
-    mnmap_msg("'" + processed_file + "' was written for reference")
+        mnmap_msg("'" + processed_file + "' was written for reference")
+
     return out
 
 def processing_init_ips(ips):
@@ -87,7 +91,6 @@ def processing_init_ips(ips):
             out.append(i[0])
         if len(i) == 2:
             out.append(i[0] + '/' + i[1])
-
     return out
 
 
@@ -115,3 +118,18 @@ def remove_thread(threads, running_ips):
             threads.remove(k)
             mnmap_msg('running threads after removed: ' + str(threads))
             mnmap_msg('running_ips after removed: ' + str(running_ips))
+
+def kill_process_using_port(ports):
+    popen = subprocess.Popen(['netstat', '-lpn'],
+                             shell=False,
+                             stdout=subprocess.PIPE)
+    (data, err) = popen.communicate()
+
+    pattern = "^tcp.*((?:{0})).* (?P<pid>[0-9]*)/.*$"
+    pattern = pattern.format(')|(?:'.join(ports))
+    prog = re.compile(pattern)
+    for line in data.split('\n'):
+        match = re.match(prog, line)
+        if match:
+            pid = match.group('pid')
+            subprocess.Popen(['kill', '-9', pid])

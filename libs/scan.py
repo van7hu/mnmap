@@ -19,7 +19,7 @@ def scan(max_thread, action, init_file):
 
     if action == 'start':
         aux.mnmap_msg("reading init file '" + init_file + "'")
-        ips = aux.read_init_file(init_file)
+        ips = aux.read_init_file(init_file, True)
         # check if there're previous scan
         shutil.rmtree(dir, True)
         os.mkdir(dir)
