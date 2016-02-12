@@ -18,11 +18,6 @@ BLACK_LIST = ['libs', 'mnmap', 'install.sh']
 #scan.scan(MAX_THREADS)
 
 def main():
-    ports = ['80']
-    aux.kill_process_using_port(ports)
-    os.chdir('html/')
-    os.system('python -m SimpleHTTPServer 80&')
-    os.chdir('..')
     parser = argparse.ArgumentParser(description="Nmap's wrapper for multiple networks scanning.")
     aux.init_argparser(parser)
     args = parser.parse_args()

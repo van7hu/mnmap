@@ -21,7 +21,15 @@ def scan(max_thread, action, init_file):
         aux.mnmap_msg("reading init file '" + init_file + "'")
         ips = aux.read_init_file(init_file, True)
         # check if there're previous scan
+        if os.path.exists(dir) == True:
+            answer = raw_input('previous scan result existed, continue starting? (y or n): ')
+            if answer == 'y':
+                pass
+            else:
+                exit(0)
+            
         shutil.rmtree(dir, True)
+
         os.mkdir(dir)
 
         aux.mnmap_msg('you have chosen to start new scanning')
@@ -47,6 +55,15 @@ def scan(max_thread, action, init_file):
     else:
         aux.mnmap_msg('please use start/resume for your action')
         exit(1)
+
+    if os.path.exists('html') == False:
+        os.mkdir('html')
+
+    ports = ['80']
+    aux.kill_process_using_port(ports)
+    os.chdir('html/')
+    os.system('python -m SimpleHTTPServer 80 >/dev/null 2>/dev/null &')
+    os.chdir('..')
 
     while True:
         state.check_for_save(threads, ips, running_ips, next_ips, init_file)
