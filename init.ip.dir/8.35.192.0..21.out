@@ -1,1 +1,0 @@
-# Nmap 7.01 scan initiated Fri Feb 12 17:58:40 2016 as: nmap -sV -O -Pn -oX init.ip.dir/8.35.192.0..21.xml -o init.ip.dir/8.35.192.0..21.out 8.35.192.0/21

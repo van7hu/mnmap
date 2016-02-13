@@ -1,1 +1,0 @@
-# Nmap 7.01 scan initiated Fri Feb 12 17:58:40 2016 as: nmap -sV -O -Pn -oX init.ip.dir/64.233.163.0..24.xml -o init.ip.dir/64.233.163.0..24.out 64.233.163.0/24
